@@ -31,12 +31,10 @@ local main = function()
   c.w = 1.0
   c.h = 1.0
   c.len = 1.0
-  c.position = {0.0, 0.0, 0.0}
-  c.color = rlcolor.BLUE
 
   local cube = ray3d.Cube.new(c.w, c.h, c.len)
-  cube:setPosition(c.position.x, c.position.y, c.position.z)
-  cube:setColor(c.color)
+  cube:setPosition(0.0, 0.0, 0.0)
+  cube:setColor(rlcolor.BLUE)
 
   -- camera
   local cam = {}
