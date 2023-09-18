@@ -7,6 +7,7 @@ local basename = function(path)
   end
   table.remove(p)
   local base = table.concat(p, '/')
+  base = string.gsub(base, './', '')
   return base
 end
 
@@ -21,7 +22,7 @@ local init_ffi = function()
   ffi.cdef(cdefs)
 
   M.raylib = ffi.load 'raylib'
-  M.rlcolor = require 'ext.rlcolor'
+  M.rlcolor = require(script_dir .. '.' .. 'ext.rlcolor')
 end
 
 local init_module = function()
